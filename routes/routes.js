@@ -1,8 +1,8 @@
 const express = require('express')
-const { receiveJson, login } = require('../controllers/routes')
+const {receiveEntries, login} = require('../controllers/routes')
 const router = express.Router()
 
-router.route('/').post(receiveJson)
+router.route('/').post(receiveEntries)
 router.route('/login').post(login)
 
 module.exports = router
