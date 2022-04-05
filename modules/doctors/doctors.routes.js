@@ -1,5 +1,5 @@
 const express = require('express')
-const {receiveEntries, login} = require('../controllers/routes')
+const {receiveEntries, login} = require('./doctors.controller')
 const router = express.Router()
 
 router.route('/').post(receiveEntries)
