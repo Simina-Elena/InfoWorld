@@ -1,9 +1,5 @@
-const express = require('express')
-const {receiveEntries, login} = require('./doctors.controller')
-const router = express.Router()
-const {authenticateToken} = require('./doctors.service')
+const {receiveEntries} = require('./doctors.controller')
+const {authenticateToken} = require('../auth/auth.service')
 
-router.route('/').post([authenticateToken, receiveEntries])
-router.route('/login').post(login)
-
-module.exports = router
+module.exports = require('express')
+    .Router().post('/', authenticateToken, receiveEntries)
